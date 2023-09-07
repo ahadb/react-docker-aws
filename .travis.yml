@@ -1,0 +1,14 @@
+# tell travis that we a copy of docker
+# build our image using dockerfile.dev
+# tell travis how to run our test suite
+# tell travis how to deploy our code to AWS
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t ahadb/react-docker-aws -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true ahadb/react-docker-aws npm run test
+
