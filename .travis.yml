@@ -1,7 +1,6 @@
 # tell travis that we a copy of docker
 # build our image using dockerfile.dev
 # tell travis how to run our test suite
-# tell travis how to deploy our code to AWS
 sudo: required
 services:
   - docker
