@@ -3,20 +3,6 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    volumes:
-      - /app/node_modules
-      - .:/app
-  tests:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-      - /app/node_modules
-      - .:/app
-    command: ["npm", "run", "test"]
-
-# compose helps us limit verbose commands when using volumes etc
-# docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app 8c6a2c965e304248722239b30e042988a9a70de878662d4baae8ff2756142b6e
+      - '80:80'
